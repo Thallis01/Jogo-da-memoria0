@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capa do Jogo</title>
+    <link rel="stylesheet" href="capa1.css">
+    <script>
+        function irParaFacil() {
+            window.location.href = "index.html";  <!-- Substitua pelo endereço da sua página -->
+        }
+        function irParaMedio() {
+            window.location.href = "medio.html";  
+        }
+        function irParaDificil() {
+            window.location.href = "dificil.html";  
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo ao Jogo!</h1>
+        <div class="buttons">
+            <button class="fase" onclick="irParaFacil()">Fácil</button>
+            <button class="fase" onclick="irParaMedio()">Médio</button>
+            <button class="fase" onclick="irParaDificil()">Difícil</button>
+        </div>
+    </div>
+</body>
+</html>

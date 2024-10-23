@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Memória de Emoções</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Jogo da Memória: Emoções</h1>
+        <div class="controls">
+            <button id="restartBtn">Reiniciar Jogo</button>
+            <button id="volumeBtn">🔊</button>
+            <button id="muteBtn" style="display:none;">🔇</button>
+            <div id="timer">Tempo: 01:20</div>
+        </div>
+        <div class="game-board" id="gameBoard"></div>
+        <div id="result" class="hidden">
+            <h2>Parabéns, você completou o jogo!</h2>
+        </div>
+    </div>
+    <div id="congratsMessage" class="hidden">
+        <div id="confetti"></div>
+        <h2>Parabéns, você completou o jogo!</h2>
+        <button id="restartBtnCongrats">Reiniciar Jogo</button> <!-- Botão de reiniciar -->
+    </div>
+    <audio id="clickSound" src="click.mp3"></audio>
+    <audio id="successSound" src="success.mp3"></audio>
+    <audio id="errorSound" src="error.mp3"></audio>
+    <audio id="backgroundMusic" src="background.mp3" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

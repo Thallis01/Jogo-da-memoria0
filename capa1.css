@@ -1,0 +1,67 @@
+/* Definindo a paleta de cores */
+:root {
+    --azul-escuro: #003366;
+    --azul-claro: #3399ff;
+    --azul-profundo: #004080;
+    --azul-medio: #66b2ff;
+    --azul-negrito: #0059b3;
+}
+
+/* Reset básico de margens e preenchimento */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilização do corpo */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--azul-escuro);
+    color: white;
+    text-align: center;
+}
+
+/* Container central para centralizar o conteúdo */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--azul-profundo);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Título principal */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    color: var(--azul-medio);
+}
+
+/* Botões das fases */
+.fase {
+    background-color: var(--azul-claro);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efeitos de hover e clique nos botões */
+.fase:hover {
+    background-color: var(--azul-negrito);
+}
+
+.fase:active {
+    transform: scale(0.95);
+}
