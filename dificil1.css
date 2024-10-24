@@ -9,7 +9,7 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #001f3f, #0074d9); /* Gradiente em tons de azul */
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,26 +35,28 @@ h1 {
 
 #gameBoard {
     display: grid;
-    grid-template-columns: repeat(4, 150px);
-    grid-template-rows: repeat(4, 150px);
-    gap: 15px;
-    padding: 20px;
+    grid-template-columns: repeat(4, 1fr); /* O tabuleiro terá 4 colunas em telas grandes */
+    gap: 1vw; /* O espaçamento entre as cartas será relativo ao tamanho da tela */
+    padding: 2vw;
     background: linear-gradient(135deg, #003366, #3399ff); /* Gradiente mais suave no tabuleiro */
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    width: 90vw; /* O tabuleiro ocupará 90% da largura da tela */
+    max-width: 600px; /* Largura máxima para evitar que fique muito grande em telas maiores */
 }
 
 .card {
-    background-color: #004080; /* Fundo sólido no início */
-    background: linear-gradient(145deg, #004080, #66b2ff); /* Gradiente na carta */
+    background-color: #004080;
+    background: linear-gradient(145deg, #004080, #66b2ff);
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 50px;
+    font-size: 5vw; /* Tamanho da fonte relativo à largura da tela */
     color: white;
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    aspect-ratio: 1/1; /* Manter a proporção 1:1 (quadrado) */
 }
 
 .card.flipped {
@@ -102,10 +104,10 @@ button:disabled {
 }
 
 #congratsMessage h2 {
-    color: white; /* Título branco */
-    font-size: 40px;
-    background: linear-gradient(135deg, #001f3f, #0074d9); /* Gradiente aplicado ao texto */
-    padding: 20px;
+    color: white;
+    font-size: 6vw; /* Tamanho do título ajustável para diferentes telas */
+    background: linear-gradient(135deg, #001f3f, #0074d9);
+    padding: 2vh;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -139,12 +141,12 @@ button:disabled {
 }
 
 #congratsMessage button {
-    font-size: 20px;
-    padding: 10px 20px;
-    margin-top: 20px;
+    font-size: 4vw;
+    padding: 1vh 2vw;
+    margin-top: 2vh;
     cursor: pointer;
     background-color: #0059b3;
-    background: linear-gradient(135deg, #0059b3, #3399ff); /* Gradiente no botão de reiniciar */
+    background: linear-gradient(135deg, #0059b3, #3399ff);
     color: white;
     border: none;
     border-radius: 5px;
@@ -163,9 +165,9 @@ button:disabled {
 }
 /* Estilo do temporizador */
 #timer {
-    font-size: 24px;
+    font-size: 4vw; /* Tamanho da fonte relativo à largura da tela */
     color: white;
-    margin-bottom: 10px;
+    margin-bottom: 1vh;
     text-align: center;
 }
 
@@ -173,3 +175,35 @@ button:disabled {
     display: none;
 }
 
+/* Media queries para telas menores */
+@media (max-width: 768px) {
+    #gameBoard {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas em tablets */
+    }
+
+    .card {
+        font-size: 6vw; /* Ajustar o tamanho das cartas */
+    }
+}
+
+@media (max-width: 480px) {
+    #gameBoard {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em smartphones */
+    }
+
+    .card {
+        font-size: 8vw; /* Aumentar o tamanho da fonte para dispositivos móveis */
+    }
+
+    #congratsMessage h2 {
+        font-size: 8vw; /* Aumentar o tamanho da mensagem em telas pequenas */
+    }
+
+    #congratsMessage button {
+        font-size: 5vw; /* Aumentar o tamanho dos botões */
+    }
+
+    #timer {
+        font-size: 5vw; /* Aumentar o tamanho do temporizador */
+    }
+}
